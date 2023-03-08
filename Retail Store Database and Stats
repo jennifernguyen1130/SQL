@@ -1,0 +1,33 @@
+CREATE TABLE Store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, aisle INTEGER);
+
+INSERT INTO Store VALUES (1, "T-Shirts", 8.00, 1); 
+INSERT INTO Store VALUES (2, "Long Sleeve Shirts", 10.00, 1); 
+INSERT INTO Store VALUES (3, "Jeans", 15.00, 2); 
+INSERT INTO Store VALUES (4, "Sweatpants", 15.00, 2); 
+INSERT INTO Store VALUES (5, "Shorts", 10.00, 2); 
+INSERT INTO Store VALUES (6, "Slacks", 12.00, 2); 
+INSERT INTO Store VALUES (7, "Leggings", 15.00, 3); 
+INSERT INTO Store VALUES (8, "Sport Tops", 10.00, 3); 
+INSERT INTO Store VALUES (9, "Sneakers", 30.00, 4); 
+INSERT INTO Store VALUES (10, "Heels", 25.00, 4); 
+INSERT INTO Store VALUES (11, "Sandals", 20.00, 4); 
+INSERT INTO Store VALUES (12, "Boots", 35.00, 4); 
+INSERT INTO Store VALUES (13, "Purses", 15.00, 5); 
+INSERT INTO Store VALUES (14, "Jewelery", 20.00, 5); 
+INSERT INTO Store VALUES (15, "Hair Accessories", 10.00, 5); 
+
+
+--display database ordered by price. 
+SELECT * FROM Store
+ORDER BY price;
+
+--what is the average price of items in aisle 4?
+SELECT AVG(price) 
+FROM Store 
+WHERE aisle = 4;
+
+--which items are less than or equal to $20 in aisles 1-2?
+SELECT * FROM Store
+WHERE price <=20 
+AND aisle <=2
+ORDER BY price asc;
